@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Playlist from "@Views/Playlist"
-export default class App extends React.Component{
+export default class getPlaylist extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
