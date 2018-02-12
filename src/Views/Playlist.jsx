@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const PlaylistItem = styled.li`
 	width:100px;
 	height:100px;
@@ -25,7 +25,10 @@ export default class Playlist extends React.Component{
 	render(){
 		console.log(this.props)
 		var playlistItems = this.props.listData.map(data=>{
-			return <PlaylistItem coverImgUrl={data.coverImgUrl} key={data.id}>{data.name}</PlaylistItem>
+			let url = `/playlistDetal/${data.id}`
+			return <Link to={url}>
+				<PlaylistItem coverImgUrl={data.coverImgUrl} key={data.id}>{data.name}</PlaylistItem>
+			</Link>
 		})
 		return <PlaylistBox>{playlistItems}</PlaylistBox>
 	}
