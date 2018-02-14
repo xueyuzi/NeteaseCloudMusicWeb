@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
+import Player from "@Components/Player";
 export default class getPlaylistDetal extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
             tracks:[],
+            playUrl:"",
         }
     }
     componentDidMount(){
@@ -21,21 +23,20 @@ export default class getPlaylistDetal extends React.Component{
     }
     handerClick(id){
         axios.get(`/music/url?id=${id}`).then(res=>{
-            console.log(res)
-            // window.location = res.data.data[0].url
-            var audio = document.createElement("audio");
-            audio.src = res.data.data[0].url;
-            audio.autoplay=true;
-            document.getElementById("app").appendChild(audio)
+            this.setState({
+                playUrl:res.data.data[0].url
+            })
         })
     }
     render(){
-        console.log(this.state.tracks)
         var musiclist = this.state.tracks.map(music=>{
             return <li onClick={e=>this.handerClick(music.id)}>
                 <a>{music.name}</a>
             </li>
         })
-        return <ul>{musiclist}</ul>
+        return <div>
+            <Player url={this.state.playUrl}/>
+            <ul>{musiclist}</ul>
+        </div>
     }
 }
