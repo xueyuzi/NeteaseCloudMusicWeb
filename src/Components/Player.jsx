@@ -20,9 +20,9 @@ export default class player extends React.Component {
         }
         return <div>
             <audio ref="myaudio" src={this.props.url} autoPlay/>
-            
-            <span onClick={this.play}>播放</span>
-            <span onClick={this.pause}>暂停</span>
+            正在播放:{this.props.name}
+            <span onClick={this.play}> 播放 </span>
+            <span onClick={this.pause}> 暂停 </span>
         </div>
     }
 }

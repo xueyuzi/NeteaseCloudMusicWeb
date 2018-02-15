@@ -1,0 +1,9 @@
+.music_list_box{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.music_list_item{
+    margin : 10px;
+}

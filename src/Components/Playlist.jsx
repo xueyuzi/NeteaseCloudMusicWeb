@@ -12,8 +12,9 @@ const SwiperSlide = styled.div`
 `
 
 const SwiperWrapper = styled.div`
-	height:300px;
+	height:20vw;
 `
+
 const SwiperMask = styled.div`
 	width:100%;
 	background:rgba(0,0,0,0.5);
@@ -41,13 +42,9 @@ export default class Playlist extends React.Component {
 	render() {
 		console.log(this.props)
 		var playlistItems = this.state.playlists.map(data => {
-			let url = `/playlistDetal/${data.id}`
-
-			// return <div className="swiper-slide">{data.name}</div>
 			return 	<SwiperSlide className="swiper-slide" coverImgUrl={data.coverImgUrl} key={data.id}>
-				<SwiperMask> <Link to={url}>{data.name} </Link></SwiperMask>
+				<SwiperMask><Link to={`/music/${data.id}`}>{data.name}</Link></SwiperMask>
 			</SwiperSlide>
-			
 		})
 
 		return <SwiperWrapper className="swiper-container">
@@ -60,7 +57,7 @@ export default class Playlist extends React.Component {
 	componentDidMount() {
 		setTimeout(function(){
 			var swiper = new Swiper(".swiper-container",{
-				slidesPerView:4,
+				slidesPerView:2,
 				spaceBetween:30,
 				pagination:{
 					el: ".swiper-pagination",
