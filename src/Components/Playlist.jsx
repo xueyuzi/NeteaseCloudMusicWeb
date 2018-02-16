@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swiper from "swiper";
+import Loader from "react-loaders";
 const SwiperSlide = styled.div`
 	background-image: url(${props => props.coverImgUrl});
 	background-size:100%;
@@ -52,6 +53,7 @@ export default class Playlist extends React.Component {
 			{playlistItems}
 		  </div>
 		  <div className="swiper-pagination"></div>
+
 		</SwiperWrapper>
 	}
 	componentDidMount() {
@@ -64,6 +66,6 @@ export default class Playlist extends React.Component {
 					clickable:true,
 				}
 			})
-		},200)
+		},500)
 	}
 }
