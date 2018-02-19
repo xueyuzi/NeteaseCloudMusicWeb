@@ -63,7 +63,7 @@ export default class getPlaylistDetal extends React.Component {
         if(this.state.loaderFlag)
             return <Loader color="skyblue" type="ball-beat" active />
         else   
-            return <div>
+            return <div className="music-list">
                 <Player name={this.state.playName} url={this.state.playUrl} />
                 <Table
                     height="400px"

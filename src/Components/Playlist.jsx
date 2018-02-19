@@ -3,7 +3,6 @@ import styled from "styled-components";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swiper from "swiper";
-import Loader from "react-loaders";
 const SwiperSlide = styled.div`
 	background-image: url(${props => props.coverImgUrl});
 	background-size:100%;

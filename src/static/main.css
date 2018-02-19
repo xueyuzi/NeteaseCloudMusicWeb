@@ -7,3 +7,27 @@
 .music_list_item{
     margin : 10px;
 }
+.player_container{
+    width:100%;
+    display:flex;
+    background-color: #4285f4;
+    justify-content: center;
+    position: fixed;
+    bottom:0px;
+    color:white;
+}
+svg{
+    color:white !important;
+}
+
+.player_bar{
+    display:flex;
+    width:1200px;
+}
+.player_info{
+    margin-left:20px;
+    flex:1;
+}
+.music-list{
+    margin-top:20px;
+}
